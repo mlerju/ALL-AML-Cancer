@@ -136,39 +136,42 @@ X_test = scaler.transform(expression_data_test.drop('cancer', axis=1))
 y_train = expression_data['cancer']
 y_test = expression_data_test['cancer']
 
-# # -------------- LOGISTIC REGRESSION --------------
-# log_reg = LogisticRegression(max_iter=1000)
-# log_reg.fit(X_train, y_train)
-# y_pred = log_reg.predict(X_test)
-# print("Logistic Regression Accuracy:", log_reg.score(X_test, y_test))
-# print(classification_report(y_test, y_pred))
-# acc = accuracy_score(y_test, y_pred)
-#
-# # Confusion Matrix
-# ConfusionMatrixDisplay.from_estimator(log_reg, X_test, y_test, colorbar= False)
-# plt.title(f"Logistic Regression Confusion Matrix, Accuracy: {acc:.2%}")
-# plt.show()
-#
-# # Cross-Validation
-# cross_val_scores = cross_val_score(log_reg, X_train, y_train, cv=10)
-# print(f"Cross-Validation scores: {cross_val_scores}")
-# print(f"Mean CV Score: {cross_val_scores.mean()}")
-#
-# # -------------- RANDOM FOREST --------------
-#
-# rf_model = RandomForestClassifier(n_estimators=100, random_state=42) # n_estimators = number of trees
-# rf_model.fit(X_train, y_train)
-# y_pred = rf_model.predict(X_test)
-# print("Random Forest Accuracy:", accuracy_score(y_test,y_pred))
-# print("\nClassification Report:\n", classification_report(y_test,y_pred))
-# cv_scores = cross_val_score(rf_model, X_train,y_train, cv=10)
-# print("\nCross-Validation Scores:", cv_scores)
-# print("Mean CV Score:", cv_scores.mean())
-# acc = accuracy_score(y_test, y_pred)
-#
-# ConfusionMatrixDisplay.from_estimator(rf_model, X_test, y_test, colorbar=False)
-# plt.title(f"Random Forest Confusion Matrix, Accuracy: {acc:.2%}")
-# plt.show()
+# -------------- LOGISTIC REGRESSION --------------
+log_reg = LogisticRegression(max_iter=1000)
+log_reg.fit(X_train, y_train)
+y_pred = log_reg.predict(X_test)
+print("Logistic Regression Accuracy:", log_reg.score(X_test, y_test))
+print(classification_report(y_test, y_pred))
+acc = accuracy_score(y_test, y_pred)
+
+# LogReg Confusion Matrix
+ConfusionMatrixDisplay.from_estimator(log_reg, X_test, y_test, colorbar= False)
+plt.title(f"Logistic Regression Confusion Matrix, Accuracy: {acc:.2%}")
+plt.show()
+
+# Cross-Validation
+cross_val_scores = cross_val_score(log_reg, X_train, y_train, cv=10)
+print(f"Cross-Validation scores: {cross_val_scores}")
+print(f"Mean CV Score: {cross_val_scores.mean()}")
+
+# -------------- RANDOM FOREST --------------
+
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42) # n_estimators = number of trees
+rf_model.fit(X_train, y_train)
+y_pred = rf_model.predict(X_test)
+print("Random Forest Accuracy:", accuracy_score(y_test,y_pred))
+print("\nClassification Report:\n", classification_report(y_test,y_pred))
+
+# Cross-Validation
+cv_scores = cross_val_score(rf_model, X_train,y_train, cv=10)
+print("\nCross-Validation Scores:", cv_scores)
+print("Mean CV Score:", cv_scores.mean())
+acc = accuracy_score(y_test, y_pred)
+
+# RF Confusion Matrix
+ConfusionMatrixDisplay.from_estimator(rf_model, X_test, y_test, colorbar=False)
+plt.title(f"Random Forest Confusion Matrix, Accuracy: {acc:.2%}")
+plt.show()
 
 # -------------- XGBOOST --------------
 label_encoder = LabelEncoder()
@@ -187,12 +190,14 @@ y_pred_encoded = xgb_model.predict(X_test)
 y_pred = label_encoder.inverse_transform(y_pred_encoded)
 print("XGBoost Accuracy:", accuracy_score(y_test_encoded,y_pred_encoded))
 print("\nClassification Report:\n", classification_report(y_test_encoded,y_pred_encoded))
+
+# Cross-Validation
 cv_scores = cross_val_score(xgb_model, X_train, y_train_encoded, cv=10)
 print("\nCross-Validation Scores:", cv_scores)
 print("Mean CV Score:", cv_scores.mean())
 acc = accuracy_score(y_test_encoded, y_pred_encoded)
 
-# XGB-CMatrix
+# XGB Confusion Matrix
 ConfusionMatrixDisplay.from_estimator(
     xgb_model,
     X_test,
