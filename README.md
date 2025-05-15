@@ -10,7 +10,7 @@ This project utilizes publicly available microarray data (https://www.kaggle.com
 
 Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 
-## 🧰 Technologies & Tools Used
+## Technologies & Tools Used
 - **Python 3.13**
 - **Pandas**: Data manipulation and loading
 - **Matplotlib & Seaborn**: Data visualization
@@ -19,7 +19,7 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 - **t-SNE & PCA**: Dimensionality reduction and data visualization
 - **PyCharm 2024.3.2**: IDE used for development
 
-## 📂 Project Structure
+## Project Structure
 ```
 project-folder/
 ├── data/
@@ -40,11 +40,11 @@ project-folder/
 - `requirements.txt`: List of dependencies.
 - `README.md`: Documentation of the project.
 
-## 🚀 Usage
+## Usage
 - The main script reads and processes the datasets, performs EDA, trains 3 models (Logistic Regression, Random Forest, XGBoost), and prints out classification metrics.
 - It also saves important figures such as heatmaps, confusion matrices and PCA/t-SNE plots.
 
-## 📊 Results
+## Results
 ### Classification Metrics (Test Set)
 | Model               | Accuracy   | Cross-Validation Score |
 |---------------------|------------|-------------------------|
@@ -55,11 +55,9 @@ project-folder/
 ### Confusion Matrix for XGBoost
 ![Confusion Matrix](figures/confusion_matrix_xgb.png)
 
-## 🔮 Future Work
+## Future Work
 - Perform hyperparameter tuning using `GridSearchCV`
 - Evaluate on external datasets for generalizability
 - Investigate deep learning models (e.g., MLP or CNN on expression profiles)
 
 ---
-Feel free to fork, modify, and share!
-
