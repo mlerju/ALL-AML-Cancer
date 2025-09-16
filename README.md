@@ -45,12 +45,15 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 ALL-AML-Cancer/
 ├── data/
 │   ├── data_set_ALL_AML_train.csv
-│   ├── data_set_ALL_AML_test.csv
+│   ├── data_set_ALL_AML_independent.csv
 │   └── actual.csv
-├── outputs/
-│   ├── pca_plot.png
-│   ├── tsne_plot.png
+├── figures/
+│   └── Class_Distribution.png
+│   ├── PCA.png
+│   ├── t-SNE.png
 │   └── confusion_matrix_xgb.png
+│   └── confusion_matrix_rf.png
+│   └── confusion_matrix_logreg.png
 ├── main.py
 ├── requirements.txt
 └── README.md
