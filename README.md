@@ -26,7 +26,7 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 ## Results
 
 ## Figures
-(figures/confusion_matrix_rf.png)
+![Confusion Matrix](figures/confusion_matrix_rf.png)
 
 ### Classification Metrics (Test Set)
 | Model               | Accuracy   | Cross-Validation Score |
