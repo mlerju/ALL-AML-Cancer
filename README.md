@@ -27,7 +27,6 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 
 ## Figures
 ![Class Distribution](figures/Class_Distribution.png)
-![PCA](PCA.png)
 ![t-SNE](figures/t-SNE.png)
 
 ### Classification Metrics (Test Set)
