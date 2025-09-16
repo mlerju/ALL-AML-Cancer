@@ -26,7 +26,10 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 ## Results
 
 ## Figures
-![Confusion Matrix](figures/confusion_matrix_rf.png)
+![Class Distribution](figures/Class_Distribution.png)
+![Heatmap](figures/Heatmap.png)
+![PCA](PCA.png)
+![t-SNE](figures/t-SNE.png)
 
 ### Classification Metrics (Test Set)
 | Model               | Accuracy   | Cross-Validation Score |
