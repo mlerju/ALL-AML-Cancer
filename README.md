@@ -24,12 +24,16 @@ Data is obtained from Golub et al., 1999 (doi: 10.1126/science.286.5439.531).
 - It also saves important figures such as heatmaps, confusion matrices and PCA/t-SNE plots.
 
 ## Results
+
+## Figures
+(figures/confusion_matrix_rf.png)
+
 ### Classification Metrics (Test Set)
 | Model               | Accuracy   | Cross-Validation Score |
 |---------------------|------------|-------------------------|
 | Logistic Regression | 0.82       | 0.95                    |
 | Random Forest       | 0.74       | 0.90                    |
-| __XGBoost__         | __0.91__   | __0.95__                    |
+| __XGBoost__         | __0.91__   | __0.95__                |
 
 ### Confusion Matrix for XGBoost
 ![Confusion Matrix](figures/confusion_matrix_xgb.png)
